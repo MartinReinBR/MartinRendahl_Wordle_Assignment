@@ -1,5 +1,5 @@
-// WordleAssignment.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
+//Martin Rendahl Wordle Assignment
+
 
 #include <iostream>
 #include <fstream>
