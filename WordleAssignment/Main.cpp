@@ -57,8 +57,11 @@ private:
     void StartGuessWord()
     {
         string guess;
-        cout << "\nGuess the 5 letter word, you have 6 tries.  " << endl;
-
+        cout << "\n---- Wordle Game ----" << endl;
+        cout << "- Guess the 5 letter word, you have 6 tries.  " << endl;
+        cout << "- Characters that are on the correct spot are highlighted Green  " << endl;
+        cout << "- Characters that are included in the word but not in the correct spot are highlighted Yellow  " << endl;
+        cout << "- Characters that are not included in the word are not highlighted.\n" << endl;
         do {
             amountOfGuesses++;
             cout << "guess number " << amountOfGuesses << ", Enter your guess: ";
@@ -127,7 +130,7 @@ private:
             for (int lineno = 0; getline(wordFile, line) && lineno < randomNumber + 1; lineno++)
                 if (lineno == randomNumber)
                 {
-                    cout << line << endl;
+                    //cout << line << endl;
                     wordToGuess = line;
                     break;
                 }
