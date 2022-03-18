@@ -37,8 +37,8 @@ class WordleGame
 {
 public:
 
-    WordleGame() {
-        cout << "Constructor called" << endl;     
+    WordleGame() 
+    {
     }
 
     void StartGame() 
@@ -64,7 +64,7 @@ private:
         cout << "- Characters that are not included in the word are not highlighted.\n" << endl;
         do {
             amountOfGuesses++;
-            cout << "guess number " << amountOfGuesses << ", Enter your guess: ";
+            cout << "guess No. " << amountOfGuesses << ", Enter your guess: ";
             while (!(cin >> guess) || guess.size() != 5)
             {
                 cout << "Must be a 5 letter word. Enter your guess:" << endl;
@@ -121,8 +121,7 @@ private:
         int randomNumber;
 
         srand(time(NULL));
-        randomNumber = rand() % 8596 + 1;
-        cout << randomNumber << endl;
+        randomNumber = rand() % 8596;
 
         ifstream wordFile("words.txt");
         if (wordFile.is_open())
@@ -130,7 +129,6 @@ private:
             for (int lineno = 0; getline(wordFile, line) && lineno < randomNumber + 1; lineno++)
                 if (lineno == randomNumber)
                 {
-                    //cout << line << endl;
                     wordToGuess = line;
                     break;
                 }
@@ -140,9 +138,9 @@ private:
 
     void AskRestart()
     {
-        char answer;
-        cout << "\nDo you wanna restart the game (Y/N)";
-        while (!(cin >> answer))
+        char answer = NULL;
+        cout << "\nDo you wanna restart the game (Y/N): ";
+        while (!(cin >> answer) || (answer != 'Y' && answer != 'N'))
         {
             cout << "Must be Y or N" << endl;
             cin.clear();
