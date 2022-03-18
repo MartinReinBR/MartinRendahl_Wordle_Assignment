@@ -64,7 +64,7 @@ private:
         cout << "- Characters that are not included in the word are not highlighted.\n" << endl;
         do {
             amountOfGuesses++;
-            cout << "guess No. " << amountOfGuesses << ", Enter your guess: ";
+            cout << "Guess No. " << amountOfGuesses << ", Enter your guess: ";
             while (!(cin >> guess) || guess.size() != 5)
             {
                 cout << "Must be a 5 letter word. Enter your guess:" << endl;
